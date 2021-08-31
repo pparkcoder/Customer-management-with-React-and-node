@@ -18,7 +18,7 @@ class CustomerAdd extends React.Component{
         this.addCustomer()
             .then((response) => {
                 console.log(response.data);
-                this.props.stateRefresh();
+                this.props.stateRefresh(); //응답을 받고나서 Refresh 실행
             })
         this.setState({
             file : null,
@@ -28,7 +28,8 @@ class CustomerAdd extends React.Component{
             job : '',
             fileName : ''
         })
-        //window.location.reload(); // 전체 페이지 새로고침
+        //window.location.reload(); // react는 spa형태로 동작함 
+                                    // 전체 페이지 새로고침은 비효율적
     }
 
     handleFileChange = (e) => {
